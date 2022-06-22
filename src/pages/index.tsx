@@ -59,7 +59,12 @@ export default function HomePage() {
   }
 
   const _downloadCV = () => {
-    alert('alert')
+    const link = document.createElement('a')
+    link.href = '/audrey-cv.png'
+    link.download = 'Audrey CV.png'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
 
