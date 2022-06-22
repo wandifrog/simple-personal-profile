@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': OFF,
     '@typescript-eslint/no-var-requires': OFF,
     '@typescript-eslint/type-annotation-spacing': ERR,
+    'react/no-unescaped-entities': OFF,
     'react/react-in-jsx-scope': OFF,
     'prettier/prettier': OFF,
     'array-element-newline': [ERR, 'consistent'],
