@@ -4,7 +4,7 @@ const ISSERVER = typeof window === 'undefined'
 const appContextPersist = !ISSERVER ? localStorage.getItem('app-context-persist') : null
 const appContextPersistJson: AppState | null = appContextPersist && JSON.parse(appContextPersist)
 const initialState = appContextPersistJson || {
-  darkMode: true,
+  darkMode: false,
   language: 'en',
   account: {
     loginStatus: false
