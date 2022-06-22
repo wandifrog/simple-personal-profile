@@ -65,7 +65,7 @@ const Text = ({
     color: color || colors.text,
     cursor: onClick ? 'pointer' : undefined,
     fontSize: size,
-    fontFamily: font,
+    fontFamily: font || 'sans-serif',
     fontStyle: italic ? 'italic' : 'normal',
     fontWeight: bold ? 'bold' : 'normal',
     textAlign: center ? 'center' : undefined,
@@ -73,7 +73,7 @@ const Text = ({
     marginRight: right,
     marginBottom: bottom,
     marginLeft: left,
-    userSelect: onClick ? 'none' : 'initial'
+    userSelect: onClick ? 'none' : 'initial',
   }
 
   return React.createElement(
