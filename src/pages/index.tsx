@@ -1,7 +1,5 @@
 import styled from '@emotion/styled'
-import Link from 'next/link'
 import HStack from '../components/HStack'
-import PFancyHeader from '../components/PFancyHeader'
 import Text from '../components/Text'
 import VStack from '../components/VStack'
 
@@ -19,6 +17,8 @@ const Content = styled.div`
   padding: 16px;
   background-color: white;
   border-radius: 30px;
+  position: relative;
+  top: -20px;
 `
 const ProfilePicture = styled.img`
   width: 110px;
@@ -26,17 +26,22 @@ const ProfilePicture = styled.img`
   border-radius: 50%;
 `
 const CustomLink = styled.div`
-  background-color: #01579B;
-  padding: 5px 12px;
-  border-radius: 25px;
-  color: #F5F5F5;
-  margin-right: 5px;
+  background-color: #263238;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: #ECEFF1;
+  margin-right: 9px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 12px;
 `
 const DownloadCV = styled.div`
-  color: #01579B;
-  font-weight: bold;
+  color: #263238;
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 13px;
+  margin-left: 5px;
+  margin-top: 20px;
 `
 const CustomText = styled.div`
   font-weight: lighter;
@@ -78,15 +83,15 @@ export default function HomePage() {
             <CustomText>Student Internship</CustomText>
           </VStack>
         </HStack>
-        <Text bottom={'10px'}>A creative and passionate professional in Social Media and Marketing field who implements knowledge and executes marketing campaign to achieve company's goal. A student in pursuing a Bachelor's Degree in Physics at University of Indonesia</Text>
+        <Text>A creative and passionate professional in Social Media and Marketing field who implements knowledge and executes marketing campaign to achieve company's goal. A student in pursuing a Bachelor's Degree in Physics at University of Indonesia</Text>
         <DownloadCV onClick={() => _downloadCV()}>Download CV</DownloadCV>
 
         <HStack top={'15px'} justify={'space-between'} align={'center'}>
-          <HStack>
+          <HStack left={'5px'}>
             <CustomLink onClick={() => _goToInstagram()}>#Instagram</CustomLink>
             <CustomLink onClick={() => _goToLinkedIn()}>#LinkedIn</CustomLink>
           </HStack>
-          <div style={{ fontSize: '21px', marginRight: '7px' }}>🎶</div>
+          <div style={{ fontSize: '21px', marginRight: '7px' }}>🎹</div>
         </HStack>
       </Content>
     </Container>
