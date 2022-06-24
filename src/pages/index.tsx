@@ -12,7 +12,7 @@ const Container = styled.div`
   align-items: center;
 `
 const Content = styled.div`
-  width: 350px;
+  max-width: 350px;
   height: auto;
   padding: 16px;
   background-color: white;
@@ -55,8 +55,8 @@ const CustomText = styled.div`
 `
 
 const Portfolio = styled.div`
-  width: 115px;
-  height: 75px;
+  width: 30%;
+  height: 65px;
   background-color: white;
   border-radius: 12px;
   display: flex;
@@ -113,11 +113,6 @@ export default function HomePage() {
           <Portfolio2 name="Music" />
           <Portfolio2 name="Books" />
         </HStack>
-        {/* <HStack justify={'space-between'}>
-          <Portfolio2 name="Marketing" />
-          <Portfolio2 name="Books" />
-          <Portfolio2 name="Graphic Design" />
-        </HStack> */}
       </VStack>
     </Container>
   )
