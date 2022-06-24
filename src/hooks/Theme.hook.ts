@@ -3,8 +3,9 @@ import useApp from './App.hook'
 
 function useTheme(): Colors {
   const [state] = useApp()
-  const colors = state.darkMode ? darkTheme : lightTheme
-  
+  // const colors = state.darkMode ? darkTheme : lightTheme
+  const colors = lightTheme
+
   return colors
 }
 

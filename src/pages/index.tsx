@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { useRouter } from 'next/dist/client/router'
 import HStack from '../components/HStack'
 import Text from '../components/Text'
 import VStack from '../components/VStack'
@@ -88,7 +89,7 @@ export default function HomePage() {
 
   return (
     <Container>
-      <VStack>
+      <VStack padding={'0px 9px'}>
         <Content>
           <HStack bottom={'16px'}>
             <ProfilePicture alt='profile picture' src='/audrey.jpeg' />
@@ -108,20 +109,21 @@ export default function HomePage() {
             <div style={{ fontSize: '22px', marginRight: '7px' }}>🎹</div>
           </HStack>
         </Content>
-        <HStack bottom={'20px'} justify={'space-between'}>
+        {/* <HStack bottom={'20px'} justify={'space-between'}>
           <Portfolio2 name="Portfolio" />
           <Portfolio2 name="Music" />
           <Portfolio2 name="Books" />
-        </HStack>
+        </HStack> */}
       </VStack>
     </Container>
   )
 }
 
 const Portfolio2 = ({ name }: { name: string }) => {
+  const router = useRouter()
 
   return (
-    <Portfolio onClick={() => alert('under development')}>
+    <Portfolio onClick={() => router.push(name)}>
       <Text>{name}</Text>
     </Portfolio>
   )
