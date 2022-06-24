@@ -27,7 +27,7 @@ const ProfilePicture = styled.img`
 `
 const CustomLink = styled.div`
   background-color: #263238;
-  padding: 3px 8px;
+  padding: 4px 8px;
   border-radius: 3px;
   color: #ECEFF1;
   margin-right: 9px;
@@ -42,6 +42,7 @@ const DownloadCV = styled.div`
   font-size: 13px;
   margin-left: 5px;
   margin-top: 20px;
+  cursor: pointer;
 `
 const CustomText = styled.div`
   font-weight: lighter;
@@ -51,6 +52,18 @@ const CustomText = styled.div`
   font-style: normal;
   text-align: center;
   user-select: initial;
+`
+
+const Portfolio = styled.div`
+  width: 115px;
+  height: 75px;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
 `
 
 export default function HomePage() {
@@ -75,25 +88,46 @@ export default function HomePage() {
 
   return (
     <Container>
-      <Content>
-        <HStack bottom={'10px'}>
-          <ProfilePicture alt='profile picture' src='/audrey.jpeg' />
-          <VStack width={'68%'}>
-            <Text size={'21px'} center bold>Audrey Febriany</Text>
-            <CustomText>Student Internship</CustomText>
-          </VStack>
-        </HStack>
-        <Text>A creative and passionate professional in Social Media and Marketing field who implements knowledge and executes marketing campaign to achieve company's goal. A student in pursuing a Bachelor's Degree in Physics at University of Indonesia</Text>
-        <DownloadCV onClick={() => _downloadCV()}>Download CV</DownloadCV>
-
-        <HStack top={'15px'} justify={'space-between'} align={'center'}>
-          <HStack left={'5px'}>
-            <CustomLink onClick={() => _goToInstagram()}>#Instagram</CustomLink>
-            <CustomLink onClick={() => _goToLinkedIn()}>#LinkedIn</CustomLink>
+      <VStack>
+        <Content>
+          <HStack bottom={'16px'}>
+            <ProfilePicture alt='profile picture' src='/audrey.jpeg' />
+            <VStack width={'68%'}>
+              <Text size={'21px'} center bold>Audrey Febriany</Text>
+              <CustomText>Student Internship</CustomText>
+            </VStack>
           </HStack>
-          <div style={{ fontSize: '21px', marginRight: '7px' }}>🎹</div>
+
+          <Text style={{ textAlign: 'justify' }}>A creative and passionate professional in Social Media and Marketing field who implements knowledge and executes marketing campaign to achieve company's goal. A student in pursuing a Bachelor's Degree in Physics at University of Indonesia.</Text>
+          <DownloadCV onClick={() => _downloadCV()}>Download CV</DownloadCV>
+          <HStack top={'15px'} justify={'space-between'} align={'center'}>
+            <HStack left={'5px'}>
+              <CustomLink onClick={() => _goToInstagram()}>#Instagram</CustomLink>
+              <CustomLink onClick={() => _goToLinkedIn()}>#LinkedIn</CustomLink>
+            </HStack>
+            <div style={{ fontSize: '22px', marginRight: '7px' }}>🎹</div>
+          </HStack>
+        </Content>
+        <HStack bottom={'20px'} justify={'space-between'}>
+          <Portfolio2 name="Portfolio" />
+          <Portfolio2 name="Music" />
+          <Portfolio2 name="Books" />
         </HStack>
-      </Content>
+        {/* <HStack justify={'space-between'}>
+          <Portfolio2 name="Marketing" />
+          <Portfolio2 name="Books" />
+          <Portfolio2 name="Graphic Design" />
+        </HStack> */}
+      </VStack>
     </Container>
+  )
+}
+
+const Portfolio2 = ({ name }: { name: string }) => {
+
+  return (
+    <Portfolio onClick={() => alert('under development')}>
+      <Text>{name}</Text>
+    </Portfolio>
   )
 }

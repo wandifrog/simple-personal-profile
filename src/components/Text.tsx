@@ -57,6 +57,7 @@ const Text = ({
   onClick,
   size = fontSize.normal,
   span = false,
+  style,
   ...props
 }: TextProps): JSX.Element => {
   const colors = useTheme()
@@ -74,6 +75,7 @@ const Text = ({
     marginBottom: bottom,
     marginLeft: left,
     userSelect: onClick ? 'none' : 'initial',
+    ...style
   }
 
   return React.createElement(
