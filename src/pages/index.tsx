@@ -32,9 +32,10 @@ const CustomLink = styled.div`
   border-radius: 3px;
   color: #ECEFF1;
   margin-right: 9px;
-  cursor: pointer;
   font-weight: bold;
   font-size: 12px;
+  cursor: pointer;
+  user-select: none;
 `
 const DownloadCV = styled.div`
   color: #263238;
@@ -52,7 +53,6 @@ const CustomText = styled.div`
   font-family: sans-serif;
   font-style: normal;
   text-align: center;
-  user-select: initial;
 `
 
 const Portfolio = styled.div`
@@ -86,10 +86,9 @@ export default function HomePage() {
     document.body.removeChild(link)
   }
 
-
   return (
     <Container>
-      <VStack padding={'0px 9px'}>
+      <VStack padding={'0px 4px'}>
         <Content>
           <HStack bottom={'16px'}>
             <ProfilePicture alt='profile picture' src='/audrey.jpeg' />
